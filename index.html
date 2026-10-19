@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <main class="app">
+    <header class="app-header">
+      <div class="logo">✓</div>
+      <h1>My To-Do List</h1>
+      <p>Plan your day, one task at a time.</p>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>Total Tasks</span>
+        <strong id="totalTasks">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Pending</span>
+        <strong id="pendingTasks">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Completed</span>
+        <strong id="completedTasks">0</strong>
+      </div>
+    </section>
+
+    <form id="taskForm" class="task-form">
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter a new task..."
+        maxlength="200"
+        aria-label="Enter a new task"
+        required
+      >
+      <button type="submit" class="add-btn">
+        + Add Task
+      </button>
+    </form>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button type="button" class="filter-btn active"
+        data-filter="all">All</button>
+      <button type="button" class="filter-btn"
+        data-filter="pending">Pending</button>
+      <button type="button" class="filter-btn"
+        data-filter="completed">Completed</button>
+    </nav>
+
+    <section class="task-section">
+      <div class="list-heading">
+        <h2>Your Tasks</h2>
+        <button type="button" id="clearCompleted"
+          class="clear-btn">Clear completed</button>
+      </div>
+
+      <ul id="taskList" class="task-list"></ul>
+
+      <p id="emptyMessage" class="empty-message">
+        No tasks yet. Add your first task!
+      </p>
+    </section>
+
+    <footer>
+      Stay focused. Small steps make big progress.
+    </footer>
+  </main>
+
+</body>
+</html>
